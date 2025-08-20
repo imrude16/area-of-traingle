@@ -12,7 +12,6 @@ const TriangleAreaModule = () => {
   const [sideA, setSideA] = useState(3);
   const [sideB, setSideB] = useState(4);
   const [sideC, setSideC] = useState(5);
-  // const [calculatorMode, setCalculatorMode] = useState('basic');
   
   // Interactive triangle states
   const [triangleVertices, setTriangleVertices] = useState({
@@ -928,6 +927,264 @@ const TriangleAreaModule = () => {
                   <span className="w-2 h-2 bg-yellow-400 rounded-full mt-2 mr-3 flex-shrink-0"></span>
                   <span className="text-slate-300">Triangle areas help calculate forces in engineering structures</span>
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    },
+    {
+      id: 'formula-reference',
+      title: 'Formula Reference & Study Guide',
+      content: (
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 h-full">
+          <div className="space-y-6">
+            <div className="bg-slate-700/50 p-6 rounded-lg">
+              <h3 className="text-blue-400 text-xl font-semibold mb-4">📋 All Triangle Area Formulas</h3>
+              
+              <div className="space-y-4">
+                <div className="bg-slate-800/50 p-4 rounded-lg border-l-4 border-blue-400">
+                  <h4 className="text-white font-semibold mb-2">1. Basic Formula (Base × Height)</h4>
+                  <div className="text-xl text-green-400 font-mono mb-2">Area = ½ × base × height</div>
+                  <p className="text-slate-300 text-sm">Use when you know any side and its corresponding height</p>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg border-l-4 border-green-400">
+                  <h4 className="text-white font-semibold mb-2">2. Heron's Formula (Three Sides)</h4>
+                  <div className="text-lg text-green-400 font-mono mb-1">s = (a + b + c) ÷ 2</div>
+                  <div className="text-lg text-green-400 font-mono mb-2">Area = √[s(s-a)(s-b)(s-c)]</div>
+                  <p className="text-slate-300 text-sm">Use when you know all three sides</p>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg border-l-4 border-purple-400">
+                  <h4 className="text-white font-semibold mb-2">3. Coordinate Formula</h4>
+                  <div className="text-lg text-green-400 font-mono mb-2">Area = ½|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|</div>
+                  <p className="text-slate-300 text-sm">Use when you have coordinates of vertices</p>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg border-l-4 border-yellow-400">
+                  <h4 className="text-white font-semibold mb-2">4. Using Two Sides & Included Angle</h4>
+                  <div className="text-lg text-green-400 font-mono mb-2">Area = ½ × a × b × sin(C)</div>
+                  <p className="text-slate-300 text-sm">Use when you know two sides and the angle between them</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-lg">
+              <h3 className="text-blue-400 text-xl font-semibold mb-4">🎯 Exam Strategy</h3>
+              
+              <div className="space-y-3">
+                <div className="bg-green-900/30 border border-green-500/50 p-4 rounded-lg">
+                  <h4 className="text-green-400 font-semibold mb-2">Step-by-Step Approach:</h4>
+                  <ol className="text-slate-300 text-sm space-y-1">
+                    <li>1. Draw and label the triangle</li>
+                    <li>2. Identify what information is given</li>
+                    <li>3. Choose the appropriate formula</li>
+                    <li>4. Substitute values carefully</li>
+                    <li>5. Calculate step by step</li>
+                    <li>6. Write the answer with correct units</li>
+                  </ol>
+                </div>
+
+                <div className="bg-blue-900/30 border border-blue-500/50 p-4 rounded-lg">
+                  <h4 className="text-blue-400 font-semibold mb-2">Common Mistakes to Avoid:</h4>
+                  <ul className="text-slate-300 text-sm space-y-1">
+                    <li>• Forgetting the ½ in basic formula</li>
+                    <li>• Using wrong height (not perpendicular)</li>
+                    <li>• Not checking triangle inequality for Heron's</li>
+                    <li>• Mixing up coordinates in coordinate formula</li>
+                    <li>• Forgetting square units in final answer</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-6">
+            <div className="bg-slate-700/50 p-6 rounded-lg">
+              <h3 className="text-blue-400 text-xl font-semibold mb-4">🧮 Practice Problems</h3>
+              
+              <div className="space-y-4">
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-white font-semibold mb-2">Problem 1: Basic Formula</h4>
+                  <p className="text-slate-300 text-sm mb-3">
+                    Find the area of a triangle with base 12 cm and height 8 cm.
+                  </p>
+                  <button 
+                    className="text-blue-400 hover:text-blue-300 text-sm underline"
+                    onClick={() => {
+                      setModalContent({
+                        title: "Solution: Basic Formula Problem",
+                        content: (
+                          <div className="space-y-4">
+                            <p className="text-slate-300">Given: Base = 12 cm, Height = 8 cm</p>
+                            <p className="text-slate-300">Formula: Area = ½ × base × height</p>
+                            <div className="bg-slate-800/50 p-3 rounded font-mono">
+                              <div>Area = ½ × 12 × 8</div>
+                              <div>Area = ½ × 96</div>
+                              <div className="text-green-400">Area = 48 cm²</div>
+                            </div>
+                          </div>
+                        )
+                      });
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    View Solution →
+                  </button>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-white font-semibold mb-2">Problem 2: Heron's Formula</h4>
+                  <p className="text-slate-300 text-sm mb-3">
+                    Find the area of a triangle with sides 6 cm, 8 cm, and 10 cm.
+                  </p>
+                  <button 
+                    className="text-blue-400 hover:text-blue-300 text-sm underline"
+                    onClick={() => {
+                      setModalContent({
+                        title: "Solution: Heron's Formula Problem",
+                        content: (
+                          <div className="space-y-4">
+                            <p className="text-slate-300">Given: a = 6 cm, b = 8 cm, c = 10 cm</p>
+                            <div className="bg-slate-800/50 p-3 rounded font-mono text-sm">
+                              <div>s = (6 + 8 + 10) ÷ 2 = 12 cm</div>
+                              <div>Area = √[s(s-a)(s-b)(s-c)]</div>
+                              <div>Area = √[12 × 6 × 4 × 2]</div>
+                              <div>Area = √576</div>
+                              <div className="text-green-400">Area = 24 cm²</div>
+                            </div>
+                            <div className="bg-blue-900/30 border border-blue-500/50 p-3 rounded">
+                              <p className="text-blue-400 text-sm">💡 Notice: This is a right triangle (6² + 8² = 10²)!</p>
+                            </div>
+                          </div>
+                        )
+                      });
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    View Solution →
+                  </button>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-white font-semibold mb-2">Problem 3: Coordinate Geometry</h4>
+                  <p className="text-slate-300 text-sm mb-3">
+                    Find the area of triangle with vertices A(0,0), B(4,0), and C(2,3).
+                  </p>
+                  <button 
+                    className="text-blue-400 hover:text-blue-300 text-sm underline"
+                    onClick={() => {
+                      setModalContent({
+                        title: "Solution: Coordinate Geometry Problem",
+                        content: (
+                          <div className="space-y-4">
+                            <p className="text-slate-300">Given: A(0,0), B(4,0), C(2,3)</p>
+                            <p className="text-slate-300">Formula: Area = ½|x₁(y₂-y₃) + x₂(y₃-y₁) + x₃(y₁-y₂)|</p>
+                            <div className="bg-slate-800/50 p-3 rounded font-mono text-sm">
+                              <div>Area = ½|0(0-3) + 4(3-0) + 2(0-0)|</div>
+                              <div>Area = ½|0 + 12 + 0|</div>
+                              <div>Area = ½ × 12</div>
+                              <div className="text-green-400">Area = 6 square units</div>
+                            </div>
+                          </div>
+                        )
+                      });
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    View Solution →
+                  </button>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-white font-semibold mb-2">Problem 4: Mixed Practice</h4>
+                  <p className="text-slate-300 text-sm mb-3">
+                    A triangular garden has two sides 15m and 20m with included angle 60°. Find its area.
+                  </p>
+                  <button 
+                    className="text-blue-400 hover:text-blue-300 text-sm underline"
+                    onClick={() => {
+                      setModalContent({
+                        title: "Solution: Trigonometric Area Formula",
+                        content: (
+                          <div className="space-y-4">
+                            <p className="text-slate-300">Given: a = 15m, b = 20m, angle C = 60°</p>
+                            <p className="text-slate-300">Formula: Area = ½ × a × b × sin(C)</p>
+                            <div className="bg-slate-800/50 p-3 rounded font-mono text-sm">
+                              <div>Area = ½ × 15 × 20 × sin(60°)</div>
+                              <div>Area = ½ × 300 × (√3/2)</div>
+                              <div>Area = 150 × 0.866</div>
+                              <div className="text-green-400">Area ≈ 129.9 m²</div>
+                            </div>
+                            <div className="bg-yellow-900/30 border border-yellow-500/50 p-3 rounded">
+                              <p className="text-yellow-400 text-sm">📝 Remember: sin(60°) = √3/2 ≈ 0.866</p>
+                            </div>
+                          </div>
+                        )
+                      });
+                      setIsModalOpen(true);
+                    }}
+                  >
+                    View Solution →
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-slate-700/50 p-6 rounded-lg">
+              <h3 className="text-blue-400 text-xl font-semibold mb-4">📚 Memory Aids</h3>
+              
+              <div className="space-y-4">
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-green-400 font-semibold mb-2">Triangle Area Rhymes:</h4>
+                  <div className="text-slate-300 text-sm space-y-1">
+                    <p><em>"Half the base times height so neat,</em></p>
+                    <p><em>Makes triangle area complete!"</em></p>
+                  </div>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-blue-400 font-semibold mb-2">Formula Selection Guide:</h4>
+                  <div className="grid grid-cols-1 gap-2 text-sm">
+                    <div className="flex justify-between items-center p-2 bg-slate-700/50 rounded">
+                      <span className="text-slate-300">Have base + height?</span>
+                      <span className="text-green-400">Use ½bh</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-slate-700/50 rounded">
+                      <span className="text-slate-300">Have all 3 sides?</span>
+                      <span className="text-blue-400">Use Heron's</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-slate-700/50 rounded">
+                      <span className="text-slate-300">Have coordinates?</span>
+                      <span className="text-purple-400">Use coordinate formula</span>
+                    </div>
+                    <div className="flex justify-between items-center p-2 bg-slate-700/50 rounded">
+                      <span className="text-slate-300">Have 2 sides + angle?</span>
+                      <span className="text-yellow-400">Use ½ab sin(C)</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-slate-800/50 p-4 rounded-lg">
+                  <h4 className="text-purple-400 font-semibold mb-2">Unit Conversion Quick Reference:</h4>
+                  <div className="text-slate-300 text-sm space-y-1">
+                    <p>• 1 m² = 10,000 cm²</p>
+                    <p>• 1 hectare = 10,000 m²</p>
+                    <p>• Always check your units match!</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-6 rounded-lg border border-blue-400/30">
+              <h3 className="text-blue-400 text-xl font-semibold mb-4">🏆 Challenge Yourself!</h3>
+              <p className="text-slate-300 mb-4">
+                Try solving problems using different methods to verify your answers. 
+                For example, if you know all three sides, try both Heron's formula and the basic formula (if you can find the height).
+              </p>
+              <div className="bg-slate-800/50 p-3 rounded">
+                <p className="text-green-400 text-sm font-semibold">Pro Tip: In exams, always draw a neat diagram and show all your work step by step!</p>
               </div>
             </div>
           </div>
